@@ -5,7 +5,7 @@ import "./access.scss";
 
 const apiURL = 'https://ut23t.sse.codesandbox.io/api'
 
-function LoginPage() {
+function SignupPage() {
   const [requesting, setRequesting] = useState(false);
 
   const submit = async (e) => {
@@ -14,12 +14,13 @@ function LoginPage() {
 
     console.log(e.target);
 
-    const username = e.target.login.value
+    const username = e.target.username.value
+    const name = e.target.name.value
     const password = e.target.password.value
 
     try {
-      const { data } = await Axios.post(`${apiURL}/login`, {
-        username, password
+      const { data } = await Axios.post(`${apiURL}/signup`, {
+        username, password, name
       })
 
       console.log(JSON.stringify(data, null, 2));
@@ -35,25 +36,28 @@ function LoginPage() {
       <h2>
         <Link to="/">Anonymous</Link>
       </h2>
-
       <form onSubmit={(e) => submit(e)}>
-        <h2 className="heading">Login</h2>
+        <h2 className="heading">Sign up</h2>
+        <div className="input-field">
+          <label>Name</label>
+          <input type="text" name="name" required />
+        </div>
         <div className="input-field">
           <label>username</label>
-          <input type="text" name="login" required />
+          <input type="text" name="username" required />
         </div>
         <div className="input-field">
           <label>Password</label>
           <input type="password" name="password" required />
         </div>
-        <button type="submit">Login</button>{" "}
+        <button type="submit">Register</button>{" "}
         {requesting && <small>processing...</small>}
         <p>
-          No account? <Link to="/register">Sign up</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </form>
     </div>
   )
 }
 
-export default LoginPage
+export default SignupPage

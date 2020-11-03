@@ -1,0 +1,52 @@
+.page {
+  background: #4527a0;
+  height: 100vh;
+  overflow-y: auto;
+
+  h2 {
+    text-align: center;
+    text-decoration: none;
+    a, p {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  form {
+    background: white;
+    box-shadow: 3px 10px 6px rgba(255, 255, 255, .1);
+    padding: .5rem 1rem 1rem;
+    border-radius: .25rem;
+    margin: 10vh auto;
+    max-width: 25rem;
+
+    .heading {
+      font-weight: 400;
+      margin: .25rem 0 .5rem;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: .5rem;
+
+      label {
+        font-size: .8rem;
+        color: rgba(0, 0, 0, 0.7);
+        text-transform: capitalize;
+        margin-bottom: .25rem;
+      }
+
+      input, textarea {
+        padding: .5rem .35rem;
+        width: 100%;
+      }
+
+      p {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
