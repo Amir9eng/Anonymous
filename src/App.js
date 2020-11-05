@@ -8,6 +8,7 @@ import AnonMessenger from './pages/AnonMessenger';
 
 import './App.scss';
 
+
 function App() {
   return (
     <div className="App">

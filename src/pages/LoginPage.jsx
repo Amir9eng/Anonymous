@@ -39,7 +39,7 @@ function LoginPage() {
       <form onSubmit={(e) => submit(e)}>
         <h2 className="heading">Login</h2>
         <div className="input-field">
-          <label>username</label>
+          <label>username / email</label>
           <input type="text" name="login" required />
         </div>
         <div className="input-field">
