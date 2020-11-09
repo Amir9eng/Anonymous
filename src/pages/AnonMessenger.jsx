@@ -6,7 +6,7 @@ const capitalize = (w) => w[0].toUpperCase().concat(w.substring(1))
 
 function AnonMessenger({ match }) {
   const anon = match.params.anon;
-
+  
   const submit = (e) => {
     console.log(e.target);
   };
@@ -28,9 +28,9 @@ function AnonMessenger({ match }) {
         <button>Send</button>
       </form>
       <p style={{ textAlign: "center" }}>
-        Want to receive anonymous messages.{" "}
+        Want to receive anonymous messages? {" "}
         <Link style={{ color: "rgba(255, 255, 255, 0.85)" }} to="/register">
-          Sign up now
+          Sign up now.
         </Link>
       </p>
     </div>

@@ -17,6 +17,7 @@ function App() {
           <Route path="/register" component={SignupPage} />
           <Route path="/message/:anon" component={AnonMessenger} />
           <Route path="/" component={HomePage} />
+          
         </Switch>
     </div>
   );

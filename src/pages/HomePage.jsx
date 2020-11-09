@@ -3,8 +3,15 @@ import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 
 import './Home.scss'
+import Axios from 'axios'
 
-const featureItems = [
+const handleMessageSubmit = (e)=>{
+  const route = window.location.href
+  const username=''
+  Axios.post(`http://localhost:3050/api/v1/${username}`,{message:e.target.message.value}).then(response => console.log(response.data)).catch(console.log)
+}
+
+  const featureItems = [
   {
     image: '/images/f-icon-1.png',
     title: 'Anonymity',

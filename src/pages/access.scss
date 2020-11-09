@@ -2,27 +2,26 @@
   background: #4527a0;
   height: 100vh;
   overflow-y: auto;
-
+  a, p {
+    text-decoration: none;
+  }
   textarea{
     resize: none;
   }
   button{
     display: block;
     margin: 1rem auto;
-    background-color: aqua;
+    background-color: #4527a0;
     color: white;
     padding: .5rem 1.8rem;
     border: none;
     border-radius: 15px;
+    outline: none;
+    cursor: pointer;
   }
   h2 {
     text-align: center;
     text-decoration: none;
-    a, p {
-      color: white;
-      text-decoration: none;
-    }
-    
   }
 
   form {
