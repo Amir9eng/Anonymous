@@ -3,6 +3,18 @@
   height: 100vh;
   overflow-y: auto;
 
+  textarea{
+    resize: none;
+  }
+  button{
+    display: block;
+    margin: 1rem auto;
+    background-color: aqua;
+    color: white;
+    padding: .5rem 1.8rem;
+    border: none;
+    border-radius: 15px;
+  }
   h2 {
     text-align: center;
     text-decoration: none;
@@ -10,6 +22,7 @@
       color: white;
       text-decoration: none;
     }
+    
   }
 
   form {
