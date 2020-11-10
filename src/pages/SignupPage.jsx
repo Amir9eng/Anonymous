@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import Axios from 'axios';
 import "./access.scss";
 
-const apiURL = 'https://ut23t.sse.codesandbox.io/api'
+const apiURL = 'http://localhost:3050/api/v1'
 
-function SignupPage() {
+function SignupPage({history}) {
   const [requesting, setRequesting] = useState(false);
 
-  const submit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setRequesting(true);
 
@@ -23,12 +23,14 @@ function SignupPage() {
         username, password, name
       })
 
-      console.log(JSON.stringify(data, null, 2));
+      console.log(data);
     } catch (err) {
       console.log({ err });
     } finally {
-      setRequesting(false)
-    }
+      setRequesting(false) 
+      history.push('/login')
+      alert('signup sucessful, start recieving anonymous messages')
+    } 
   };
 
   return (
@@ -36,7 +38,7 @@ function SignupPage() {
       <h2>
         <Link to="/">Anonymous</Link>
       </h2>
-      <form onSubmit={(e) => submit(e)}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <h2 className="heading">Sign up</h2>
         <div className="input-field">
           <label>Name</label>
