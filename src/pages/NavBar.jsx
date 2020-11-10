@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 function NavBar() {
-  const [showForm, setShowForm] = useState(false)
 
   return (
     <nav>
