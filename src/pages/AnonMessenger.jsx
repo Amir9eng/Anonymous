@@ -11,7 +11,7 @@ function AnonMessenger({ match }) {
   const handleMessageSubmit = (e)=>{
     e.preventDefault();
     
-     Axios.post(`http://localhost:3050/api/v1/${anon}`,{message:e.target.text.value}).then(response => console.log(response)).catch(console.log)
+     Axios.post(`http://localhost:3030/api/v1/${anon}`,{message:e.target.text.value}).then(response => console.log(response)).catch(console.log)
   }
   
 

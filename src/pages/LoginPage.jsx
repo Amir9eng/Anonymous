@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Axios from 'axios';
 import "./access.scss";
 
-const apiURL = 'https://ut23t.sse.codesandbox.io/api'
+const apiURL = 'http://localhost:3030/api/v1'
 
 function LoginPage() {
   const [requesting, setRequesting] = useState(false);
@@ -21,7 +21,7 @@ function LoginPage() {
       const { data } = await Axios.post(`${apiURL}/login`, {
         username, password
       })
-
+      console.log(data)
       console.log(JSON.stringify(data, null, 2));
     } catch (err) {
       console.log({ err });
@@ -33,7 +33,7 @@ function LoginPage() {
   return (
     <div className="page">
       <h2>
-        <Link to="/">Anonymous</Link>
+        <Link to="/" className= "anon-header">Anonymous</Link>
       </h2>
 
       <form onSubmit={(e) => submit(e)}>

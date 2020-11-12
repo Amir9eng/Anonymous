@@ -9,6 +9,7 @@ import AnonMessenger from './pages/AnonMessenger';
 import './App.scss';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,7 @@ function App() {
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={SignupPage} />
           <Route path="/message/:anon" component={AnonMessenger} />
-          <Route path="/" component={HomePage} />
+          <Route exact path="/" component={HomePage} />
           
         </Switch>
     </div>

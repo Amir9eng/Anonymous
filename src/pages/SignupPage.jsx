@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Axios from 'axios';
 import "./access.scss";
 
-const apiURL = 'http://localhost:3050/api/v1'
+const apiURL = 'http://localhost:3030/api/v1'
 
 function SignupPage({history}) {
   const [requesting, setRequesting] = useState(false);
@@ -25,18 +25,17 @@ function SignupPage({history}) {
 
       console.log(data);
     } catch (err) {
-      console.log({ err });
+      console.log(err);
     } finally {
       setRequesting(false) 
       history.push('/login')
-      alert('signup sucessful, start recieving anonymous messages')
     } 
   };
 
   return (
     <div className="page">
       <h2>
-        <Link to="/">Anonymous</Link>
+        <Link to="/" className= "anon-header">Anonymous</Link>
       </h2>
       <form onSubmit={(e) => handleSubmit(e)}>
         <h2 className="heading">Sign up</h2>
