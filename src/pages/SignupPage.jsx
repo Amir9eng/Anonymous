@@ -28,7 +28,6 @@ function SignupPage({history}) {
       console.log(err);
     } finally {
       setRequesting(false) 
-      history.push('/login')
     } 
   };
 
@@ -42,6 +41,10 @@ function SignupPage({history}) {
         <div className="input-field">
           <label>Name</label>
           <input type="text" name="name" required />
+        </div>
+        <div className="input-field">
+          <label>email</label>
+          <input type="text" name="email" required />
         </div>
         <div className="input-field">
           <label>username</label>
