@@ -1,11 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import "./access.scss";
+import "./AnonMessenger";
 import Axios from 'axios';
 
 const capitalize = (w) => w[0].toUpperCase().concat(w.substring(1))
 
+
+const MessageCount = ({textCount}) =>  <span style={{color:'black'}}className="indicator">{textCount}</span>
 function AnonMessenger({ match }) {
+
+  const [textCount, setTextCount] = useState(0)
+
   const anon = match.params.anon;
 
   const handleMessageSubmit = (e)=>{
@@ -27,7 +33,11 @@ function AnonMessenger({ match }) {
         </p>
         <div className="input-field">
           <label>Message</label>
-          <textarea name="text" rows="10" required></textarea>
+          <textarea onChange={(e) => setTextCount((e.target.value).length)} name="text" rows="10" required maxLength= "400" placeholder="Type a message here.....">
+          
+          </textarea>
+          <MessageCount textCount={textCount} />
+          
         </div>
         <button>Send</button>
       </form>
